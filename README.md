@@ -6,6 +6,7 @@
 * create discord account
 * create any channel
 * generate webhook link
+* paste it to index.html
 
 ### PREREQUISITES
 * discord account
